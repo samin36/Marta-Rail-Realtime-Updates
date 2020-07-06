@@ -19,6 +19,7 @@ export const getAllStations = async () => {
 export const getArrivalsByStations = async (stationName) => {
   let data = await fetchData();
   data = data.filter((record) => record.STATION === stationName.toUpperCase());
+  // console.log(data);
   return {
     north: data.filter((record) => record.DIRECTION === "N"),
     south: data.filter((record) => record.DIRECTION === "S"),

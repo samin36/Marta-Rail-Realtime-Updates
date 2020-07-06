@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Header, Divider, Segment, Label } from "semantic-ui-react";
+import { Container, Header, Segment, Label } from "semantic-ui-react";
 
 function StationResult({ direction, results }) {
   const parseStatus = (waitingTime) => {
@@ -18,26 +18,37 @@ function StationResult({ direction, results }) {
   };
 
   return (
-    <Container fluid>
-      <Header as="h3" color="blue" content={`${direction} Bound`} />
-      <Divider style={{ marginBottom: "0" }} />
-      {results ? (
-        <Segment.Group compact stacked>
+    <Container style={{ paddingTop: `${results.length > 0 ? 0.5 : 0}em` }}>
+      {results.length > 0 ? (
+        <Segment.Group compact raised>
+          <Header
+            as="h3"
+            color="blue"
+            content={`${direction} Bound`}
+            style={{ padding: "0.3em", margin: "0em" }}
+          />
           {results.map((train, index) => (
             <Segment
               key={index}
               clearing
               color={parseColor(train.LINE)}
-              attached="bottom"
+              style={{ padding: "0.75em", margin: "0em" }}
             >
-              <Header as="h4">
+              <Header
+                as="h4"
+                style={{
+                  padding: "0em",
+                  margin: "0em",
+                  display: "inline-block",
+                }}
+              >
                 <Label
                   circular
                   color={parseColor(train.LINE)}
                   content={direction.charAt(0)}
-                  style={{ marginRight: ".5em" }}
+                  style={{ marginRight: ".5em", display: "inline-block" }}
                 />
-                <Header.Content>
+                <Header.Content style={{ display: "inline-block" }}>
                   Train to {train.DESTINATION} {parseStatus(train.WAITING_TIME)}
                 </Header.Content>
               </Header>

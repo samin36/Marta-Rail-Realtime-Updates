@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Grid } from "semantic-ui-react";
+import { Container } from "semantic-ui-react";
 import { getArrivalsByStations } from "../Data/FetchData";
 import StationResult from "./StationResult";
 
@@ -24,7 +24,7 @@ function StationResults({ selectedStation }) {
   useEffect(() => {
     if (selectedStation) {
       clearInterval(state.timerID);
-      const timerID = setInterval(fetchResults, 500);
+      const timerID = setInterval(fetchResults, 1000);
       setState((prevState) => {
         return { ...prevState, timerID };
       });
@@ -32,26 +32,12 @@ function StationResults({ selectedStation }) {
   }, [selectedStation]);
 
   return (
-    <React.Fragment>
-      <Grid celled stackable>
-        <Grid.Row columns={2}>
-          <Grid.Column>
-            <StationResult direction="North" results={state.results.north} />
-          </Grid.Column>
-          <Grid.Column>
-            <StationResult direction="South" results={state.results.south} />
-          </Grid.Column>
-        </Grid.Row>
-        <Grid.Row columns={2}>
-          <Grid.Column>
-            <StationResult direction="East" results={state.results.east} />
-          </Grid.Column>
-          <Grid.Column>
-            <StationResult direction="West" results={state.results.west} />
-          </Grid.Column>
-        </Grid.Row>
-      </Grid>
-    </React.Fragment>
+    <Container>
+      <StationResult direction="North" results={state.results.north} />
+      <StationResult direction="South" results={state.results.south} />
+      <StationResult direction="East" results={state.results.east} />
+      <StationResult direction="West" results={state.results.west} />
+    </Container>
   );
 }
 

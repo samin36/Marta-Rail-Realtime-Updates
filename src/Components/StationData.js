@@ -21,9 +21,7 @@ function StationData({ selectedStation }) {
               index={0}
               onClick={handleClick}
             >
-              <Accordion.Content
-                style={{ marginTop: "-1.25em", marginBottom: "-1em" }}
-              >
+              <Accordion.Content style={{ marginTop: "-1.25em" }}>
                 <Icon name="dropdown" color="red" circular />
                 <Header
                   as="p"

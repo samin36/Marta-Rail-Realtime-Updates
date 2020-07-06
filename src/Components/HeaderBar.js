@@ -41,7 +41,7 @@ function HeaderBar() {
           </Message>
         </Accordion.Content>
       </Accordion>
-      <Divider />
+      <Divider style={{ marginTop: "0em" }} />
     </Container>
   );
 }
