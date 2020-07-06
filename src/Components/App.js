@@ -29,7 +29,7 @@ function App() {
   };
 
   return (
-    <Container fluid>
+    <Container fluid style={{ padding: "1em" }}>
       <HeaderBar />
       <SearchBar
         stationsList={state.stationsList}
