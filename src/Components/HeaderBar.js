@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import {
   Header,
   Icon,
-  Divider,
   Accordion,
   Container,
   Message,
@@ -57,7 +56,6 @@ function HeaderBar() {
           </Message>
         </Accordion.Content>
       </Accordion>
-      <Divider style={{ marginTop: "0em" }} />
     </Container>
   );
 }

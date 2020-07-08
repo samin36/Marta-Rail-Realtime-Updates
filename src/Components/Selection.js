@@ -1,7 +1,13 @@
-import React from "react";
-import { Container, Dropdown } from "semantic-ui-react";
+import React, { useContext } from "react";
+import { Container, Dropdown, Divider } from "semantic-ui-react";
+import { StationContext } from "../Context/StationContext";
 
-function Selection({ stationsList, selectedStation, setSelectedStation }) {
+function Selection() {
+  const {
+    state: { stationsList, selectedStation },
+    setState,
+  } = useContext(StationContext);
+
   const options = stationsList.map((station, index) => {
     return {
       key: index,
@@ -10,8 +16,15 @@ function Selection({ stationsList, selectedStation, setSelectedStation }) {
     };
   });
 
+  const setSelectedStation = (e, { value }) => {
+    setState((prevState) => {
+      return { ...prevState, selectedStation: value };
+    });
+  };
+
   return (
     <Container text textAlign="center">
+      <Divider style={{ margin: "0.5em auto" }} />
       <Dropdown
         loading={stationsList.length === 0 ? true : false}
         onChange={setSelectedStation}

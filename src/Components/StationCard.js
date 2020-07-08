@@ -1,8 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { getStationData } from "../Data/FetchData";
 import { Card, Container, Image, Label, Icon } from "semantic-ui-react";
+import { StationContext } from "../Context/StationContext";
 
-function StationCard({ selectedStation }) {
+function StationCard() {
+  const {
+    state: { selectedStation },
+  } = useContext(StationContext);
   const [stationInfo, setStationInfo] = useState(null);
 
   useEffect(() => {
