@@ -44,6 +44,9 @@ function StationResults() {
         return { ...prevState, timerID };
       });
     }
+    return () => {
+      clearInterval(resultState.timerID);
+    };
   }, [selectedStation]);
 
   useEffect(() => {

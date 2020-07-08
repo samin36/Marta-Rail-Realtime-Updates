@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, memo } from "react";
 import {
   Header,
   Icon,
@@ -60,4 +60,4 @@ function HeaderBar() {
   );
 }
 
-export default HeaderBar;
+export default memo(HeaderBar);

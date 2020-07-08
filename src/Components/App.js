@@ -23,7 +23,6 @@ function App() {
         return { ...prevState, stationsList };
       });
     } else {
-      // console.log("error");
       setState((prevState) => {
         return { ...prevState, hasErrorOccurred: true };
       });
@@ -31,16 +30,24 @@ function App() {
   };
 
   useEffect(() => {
+    const data = localStorage.getItem("favoriteStations");
+    if (data) {
+      setState((prevState) => {
+        return { ...prevState, favoriteStations: JSON.parse(data) };
+      });
+    }
     fetchStationsList();
   }, []);
 
+  useEffect(() => {
+    localStorage.setItem(
+      "favoriteStations",
+      JSON.stringify(state.favoriteStations)
+    );
+  });
+
   return (
-    <Container
-      style={{
-        padding: "1em",
-      }}
-      fluid
-    >
+    <Container style={{ padding: "1em" }} fluid>
       {state.hasErrorOccurred && <Error />}
       <HeaderBar />
       <StationContext.Provider

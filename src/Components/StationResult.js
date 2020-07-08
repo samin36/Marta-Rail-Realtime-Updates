@@ -19,7 +19,7 @@ function StationResult({ direction, results }) {
 
   return (
     <Container fluid>
-      {results.length > 0 ? (
+      {results.length > 0 && (
         <Segment.Group compact raised>
           <Header
             as="h3"
@@ -55,7 +55,7 @@ function StationResult({ direction, results }) {
             </Segment>
           ))}
         </Segment.Group>
-      ) : null}
+      )}
     </Container>
   );
 }
