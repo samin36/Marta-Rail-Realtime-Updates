@@ -1,7 +1,7 @@
 import stationInfo from "./StationInfo";
 const apiUrl = "https://martarail-api.vercel.app/";
 
-export const fetchData = async () => {
+const fetchData = async () => {
   const resp = await fetch(apiUrl);
   const data = await resp.json();
   return data;

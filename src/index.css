@@ -1,0 +1,9 @@
+.ui.dropdown .menu {
+  min-height: 18rem !important;
+  /* height: 8em; */
+}
+
+.ui.fluid.container {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}

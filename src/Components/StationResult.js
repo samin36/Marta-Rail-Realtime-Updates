@@ -18,7 +18,7 @@ function StationResult({ direction, results }) {
   };
 
   return (
-    <Container style={{ paddingTop: `${results.length > 0 ? 0.5 : 0}em` }}>
+    <Container fluid>
       {results.length > 0 ? (
         <Segment.Group compact raised>
           <Header

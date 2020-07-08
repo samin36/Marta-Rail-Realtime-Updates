@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Container } from "semantic-ui-react";
 import HeaderBar from "./HeaderBar";
-import SearchBar from "./SearchBar";
+import Selection from "./Selection";
 import StationData from "./StationData";
 import { getAllStations } from "../Data/FetchData";
 
@@ -29,9 +29,14 @@ function App() {
   };
 
   return (
-    <Container fluid style={{ padding: "1em" }}>
+    <Container
+      style={{
+        padding: "1em",
+      }}
+      fluid
+    >
       <HeaderBar />
-      <SearchBar
+      <Selection
         stationsList={state.stationsList}
         selectedStation={state.selectedStation}
         setSelectedStation={setSelectedStation}

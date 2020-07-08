@@ -10,7 +10,7 @@ function StationCard({ selectedStation }) {
   }, [selectedStation]);
 
   return (
-    <Container style={{ marginTop: "1em" }}>
+    <Container style={{ marginTop: "1em", marginBottom: "0.75em" }} fluid>
       {stationInfo ? (
         <Card centered raised>
           <Image src={stationInfo.image} wrapped />
@@ -25,7 +25,7 @@ function StationCard({ selectedStation }) {
             </Card.Description>
           </Card.Content>
           <Card.Content extra textAlign="center">
-            <Label as="a" href={stationInfo.moreInfo}>
+            <Label as="a" href={stationInfo.moreInfo} target="_blank">
               <Icon name="info" />
               More Info
             </Label>

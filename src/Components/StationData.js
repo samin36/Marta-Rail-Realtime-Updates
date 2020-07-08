@@ -12,7 +12,7 @@ function StationData({ selectedStation }) {
   };
 
   return (
-    <Container textAlign="center">
+    <Container fluid textAlign="center">
       {selectedStation ? (
         <React.Fragment>
           <Accordion>

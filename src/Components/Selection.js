@@ -1,7 +1,7 @@
 import React from "react";
 import { Container, Dropdown } from "semantic-ui-react";
 
-function SearchBar({ stationsList, selectedStation, setSelectedStation }) {
+function Selection({ stationsList, selectedStation, setSelectedStation }) {
   const options = stationsList.map((station, index) => {
     return {
       key: index,
@@ -25,4 +25,4 @@ function SearchBar({ stationsList, selectedStation, setSelectedStation }) {
   );
 }
 
-export default SearchBar;
+export default Selection;
