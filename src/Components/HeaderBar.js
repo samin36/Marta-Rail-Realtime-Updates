@@ -39,8 +39,8 @@ function HeaderBar() {
               below!
             </p>
             <Message.Content>
-              <Item as="a" href="https://github.com/samin36" target="_blank">
-                <Icon name="github" circular />
+              <Item as="a" href="https://shreyamin.vercel.app" target="_blank">
+                <Icon name="user" circular />
               </Item>
               <Item as="a" href="mailto:shreyamin75@gmail.com">
                 <Icon name="mail" circular />
